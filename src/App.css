@@ -5,6 +5,7 @@
   --gray: #aaa;
   --dark-gray: #777;
   --primary-color: #3276dc;
+  --primary-color-lighter: hsl(216, 95%, 60%);
   --primary-shadow-color: rgba(10, 84, 194, 0.7);
 }
 

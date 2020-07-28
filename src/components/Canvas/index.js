@@ -3,13 +3,17 @@ import "./style.css";
 
 import Controls from "../Controls";
 
+const canvas = React.createRef();
+
+function loadImage() {}
+
 const Canvas = (props) => {
   return (
     <div className="wrapper">
       <div className="canvas_holder">
-        <canvas></canvas>
+        <canvas ref={canvas}></canvas>
       </div>
-      <Controls />
+      <Controls canvas={canvas} />
     </div>
   );
 };

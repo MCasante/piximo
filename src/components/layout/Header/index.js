@@ -5,7 +5,7 @@ const Header = (props) => {
   const { logo, logoText, children } = props;
 
   return (
-    <header class="page_header">
+    <header className="page_header">
       <div className="logo">
         <img src={logo} alt="Piximo" />
         <h1>{logoText}</h1>

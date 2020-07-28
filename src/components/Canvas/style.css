@@ -5,3 +5,13 @@
   border-radius: 7px;
   overflow: hidden;
 }
+
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.canvas_holder canvas {
+  width: 100%;
+}

@@ -1,0 +1,35 @@
+.controls_holder {
+  margin: 40px auto;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.controls_holder button {
+  padding: 0.8rem 1.5rem;
+  display: block;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px var(--primary-shadow-color);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.controls_holder button:hover {
+  background-color: var(--primary-color-lighter);
+  box-shadow: 1px 1px 3px var(--primary-shadow-color);
+}
+
+.controls_holder button > svg {
+  margin-right: 1rem;
+}
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
