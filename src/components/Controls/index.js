@@ -4,7 +4,15 @@ import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Controls = (props) => {
-  const { piximo, canvas, save, pixelSize, setPixelSize, setFileName } = props;
+  const {
+    piximo,
+    canvas,
+    save,
+    pixelSize,
+    setPixelSize,
+    setFileName,
+    setImageData,
+  } = props;
 
   const inputFile = React.createRef();
   const [active, setActive] = React.useState(false);
@@ -22,6 +30,7 @@ const Controls = (props) => {
       return;
     }
     const file = inputFile.current.files[0];
+    inputFile.current.value = "";
 
     const fr = new FileReader();
     fr.addEventListener("load", createImage);
@@ -39,6 +48,7 @@ const Controls = (props) => {
 
         const ctx = canvas.current.getContext("2d");
         ctx.drawImage(image, 0, 0, width, height);
+        setImageData(ctx.getImageData(0, 0, width, height));
       });
 
       image.src = fr.result;

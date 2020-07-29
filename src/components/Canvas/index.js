@@ -10,8 +10,12 @@ const Canvas = (props) => {
 
   const [pixelSize, setPixelSize] = React.useState(64);
   const [fileName, setFileName] = React.useState("");
+  const [imageData, setImageData] = React.useState([]);
 
   function piximo() {
+    const ctx = canvas.current.getContext("2d");
+    ctx.putImageData(imageData, 0, 0);
+
     piximoTool.piximo(canvas.current, pixelSize);
   }
 
@@ -38,6 +42,7 @@ const Canvas = (props) => {
         setPixelSize={setPixelSize}
         save={saveImage}
         setFileName={setFileName}
+        setImageData={setImageData}
       />
     </div>
   );
