@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/piximo/static/css/main.a3259cdf.chunk.css",
+    "main.css": "/piximo/static/css/main.6769352a.chunk.css",
     "main.js": "/piximo/static/js/main.590c8abd.chunk.js",
     "main.js.map": "/piximo/static/js/main.590c8abd.chunk.js.map",
     "runtime-main.js": "/piximo/static/js/runtime-main.385c256b.js",
@@ -8,16 +8,16 @@
     "static/js/2.8b8eb8ba.chunk.js": "/piximo/static/js/2.8b8eb8ba.chunk.js",
     "static/js/2.8b8eb8ba.chunk.js.map": "/piximo/static/js/2.8b8eb8ba.chunk.js.map",
     "index.html": "/piximo/index.html",
-    "precache-manifest.f7be8034e6c0975ed4469d7dd3c67b98.js": "/piximo/precache-manifest.f7be8034e6c0975ed4469d7dd3c67b98.js",
+    "precache-manifest.436443468703c3c25ecc76b99f075a4a.js": "/piximo/precache-manifest.436443468703c3c25ecc76b99f075a4a.js",
     "service-worker.js": "/piximo/service-worker.js",
-    "static/css/main.a3259cdf.chunk.css.map": "/piximo/static/css/main.a3259cdf.chunk.css.map",
+    "static/css/main.6769352a.chunk.css.map": "/piximo/static/css/main.6769352a.chunk.css.map",
     "static/js/2.8b8eb8ba.chunk.js.LICENSE.txt": "/piximo/static/js/2.8b8eb8ba.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/piximo/static/media/logo.5dee7346.png"
   },
   "entrypoints": [
     "static/js/runtime-main.385c256b.js",
     "static/js/2.8b8eb8ba.chunk.js",
-    "static/css/main.a3259cdf.chunk.css",
+    "static/css/main.6769352a.chunk.css",
     "static/js/main.590c8abd.chunk.js"
   ]
 }

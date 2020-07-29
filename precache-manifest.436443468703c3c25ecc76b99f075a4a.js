@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0d65437421d07b664285a5b6d17bc8c5",
+    "revision": "8df8e7a63f0d75e2ae44dfafe24a166d",
     "url": "/piximo/index.html"
   },
   {
-    "revision": "f922969b6999c81885ed",
-    "url": "/piximo/static/css/main.a3259cdf.chunk.css"
+    "revision": "237a558568a7be37a050",
+    "url": "/piximo/static/css/main.6769352a.chunk.css"
   },
   {
     "revision": "bbd95fd03b04da5dd625",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/piximo/static/js/2.8b8eb8ba.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f922969b6999c81885ed",
+    "revision": "237a558568a7be37a050",
     "url": "/piximo/static/js/main.590c8abd.chunk.js"
   },
   {
