@@ -5,7 +5,9 @@
   --gray: #aaa;
   --dark-gray: #777;
   --primary-color: #3276dc;
-  --primary-color-lighter: hsl(216, 95%, 60%);
+  --primary-color-lighter: #3886fa;
+  --primary-color-darker: hsl(216, 85%, 30%);
+  --primary-color-disabled: #6f829f;
   --primary-shadow-color: rgba(10, 84, 194, 0.7);
 }
 
@@ -42,4 +44,24 @@ code {
   max-width: 1440px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
+}
+
+.intro {
+  margin-bottom: 3rem;
+}
+
+.intro h2 {
+  color: var(--primary-color-darker);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro h2 svg {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.intro p {
+  color: var(--dark-gray);
 }

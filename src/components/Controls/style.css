@@ -1,12 +1,77 @@
 .controls_holder {
-  margin: 40px auto;
-  width: 100%;
-  max-width: 600px;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.controls_holder button {
+.controls_holder label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.controls_holder input[type="number"] {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  width: 4rem;
+  text-align: right;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pixel-size-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.pixel-size-button.less {
+  z-index: 2;
+  border-radius: 7px 0 0 7px;
+}
+
+.pixel-size-button.plus {
+  border-radius: 0 7px 7px 0;
+}
+
+.pixel-size-button:hover {
+  background-color: var(--primary-color-lighter);
+  box-shadow: 1px 1px 3px var(--primary-shadow-color);
+}
+
+.buttons_holder {
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons_holder button {
   padding: 0.8rem 1.5rem;
   display: block;
   font-size: 1.2rem;
@@ -20,16 +85,70 @@
   transition: 0.25s;
 }
 
-.controls_holder button:hover {
+.buttons_holder button:not(:last-child) {
+  margin-right: 1.2rem;
+}
+
+.buttons_holder button:hover {
   background-color: var(--primary-color-lighter);
   box-shadow: 1px 1px 3px var(--primary-shadow-color);
 }
 
-.controls_holder button > svg {
+.buttons_holder button > svg {
   margin-right: 1rem;
 }
 
 .hidden {
   visibility: hidden;
   position: absolute;
+}
+
+.buttons_holder button[disabled] {
+  background-color: var(--primary-color-disabled);
+  box-shadow: 2px 2px 5px var(--primary-color-disabled);
+}
+
+@media (max-width: 768px) {
+  .buttons_holder {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .buttons_holder button {
+    width: calc(31% - 1rem);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+  }
+
+  .buttons_holder button svg {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons_holder {
+    justify-content: space-between;
+  }
+
+  .buttons_holder button:not(:last-child) {
+    margin-right: 0;
+    width: calc(50% - 1rem);
+  }
+
+  .buttons_holder button:last-child {
+    flex-direction: row;
+    font-size: 2rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttons_holder button:last-child > svg {
+    margin-top: 0.8rem;
+    margin-right: 1rem;
+  }
 }

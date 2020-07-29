@@ -4,12 +4,27 @@ import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Controls = (props) => {
-  const { pixelify, canvas, save } = props;
+  const { piximo, canvas, save, pixelSize, setPixelSize, setFileName } = props;
 
   const inputFile = React.createRef();
+  const [active, setActive] = React.useState(false);
+
+  function handleChanges(name) {
+    setActive(false);
+    setTimeout(() => {
+      setActive(true);
+      setFileName(name);
+    }, 1000);
+  }
 
   function handleFile() {
+    if (!inputFile.current.files[0]) {
+      return;
+    }
     const file = inputFile.current.files[0];
+
+    console.log(canvas);
+
     const fr = new FileReader();
     fr.addEventListener("load", createImage);
     fr.readAsDataURL(file);
@@ -30,30 +45,69 @@ const Controls = (props) => {
 
       image.src = fr.result;
     }
-    console.log(file);
+
+    handleChanges(file.name);
+  }
+
+  function changePixelSize(value) {
+    if (value > 100) {
+      value = 100;
+    }
+    if (value < 3) {
+      value = 3;
+    }
+
+    setPixelSize(value);
   }
 
   return (
     <div className="controls_holder">
-      <input
-        type="file"
-        className="hidden"
-        onChange={handleFile}
-        accept="image/*"
-        ref={inputFile}
-      />
-      <button onClick={() => inputFile.current.click()}>
-        <FontAwesomeIcon icon="upload" />
-        Upload File
-      </button>
-      <button onClick={pixelify}>
-        <FontAwesomeIcon icon="magic" />
-        Piximo it!
-      </button>
-      <button onClick={save}>
-        <FontAwesomeIcon icon="save" />
-        Save
-      </button>
+      <div className="pixel-size-holder">
+        <label htmlFor="pixel-size">Set Pixel Size</label>
+        <button
+          className="pixel-size-button less"
+          onClick={() => changePixelSize(pixelSize - 1)}
+        >
+          <FontAwesomeIcon icon="minus-circle" />
+        </button>
+        <input
+          id="pixel-size"
+          name="pixel-size"
+          type="number"
+          value={pixelSize}
+          onChange={(e) => changePixelSize(e.target.value)}
+        />
+
+        <button
+          className="pixel-size-button plus"
+          onClick={() => changePixelSize(pixelSize + 1)}
+        >
+          <FontAwesomeIcon icon="plus-circle" />
+        </button>
+      </div>
+
+      <div className="buttons_holder">
+        <input
+          type="file"
+          className="hidden"
+          onChange={handleFile}
+          accept="image/*"
+          ref={inputFile}
+        />
+
+        <button onClick={() => inputFile.current.click()}>
+          <FontAwesomeIcon icon="upload" />
+          Upload
+        </button>
+        <button onClick={piximo} disabled={active ? false : true}>
+          <FontAwesomeIcon icon="magic" />
+          Piximify!
+        </button>
+        <button onClick={save} disabled={active ? false : true}>
+          <FontAwesomeIcon icon="save" />
+          Save
+        </button>
+      </div>
     </div>
   );
 };

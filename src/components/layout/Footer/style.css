@@ -5,3 +5,12 @@
   padding: 20px;
   background-color: var(--light-gray);
 }
+
+.page_footer a {
+  color: var(--dark-gray);
+  transition: 0.25s;
+}
+
+.page_footer a:hover {
+  color: var(--primary-color-lighter);
+}

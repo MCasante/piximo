@@ -5,6 +5,13 @@
   color: var(--white);
 }
 
+.page_header .container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
 .page_header .logo img {
   max-width: 3.5rem;
   border-radius: 50%;
@@ -15,8 +22,6 @@
 .page_header .logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
 }
 
 .page_header .logo h1 {

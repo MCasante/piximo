@@ -6,12 +6,14 @@ const Header = (props) => {
 
   return (
     <header className="page_header">
-      <div className="logo">
-        <img src={logo} alt="Piximo" />
-        <h1>{logoText}</h1>
-      </div>
+      <div className="container">
+        <div className="logo">
+          <img src={logo} alt="Piximo" />
+          <h1>{logoText}</h1>
+        </div>
 
-      <div className="menu_holder">{children}</div>
+        <div className="menu_holder">{children}</div>
+      </div>
     </header>
   );
 };
