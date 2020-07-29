@@ -31,18 +31,25 @@ const piximoTools = {
 };
 
 export default {
-  piximo(canvas, pixelSize) {
+  piximo(canvas, imageWidth) {
     const width = canvas.width;
     const height = canvas.height;
+
+    const pixelSize = Math.floor(width / imageWidth);
+
+    const rowLength = width / pixelSize;
+    const columnLength = (height * rowLength) / width;
+
     const ctx = canvas.getContext("2d");
+    const size = pixelSize;
 
     function createPixel(posX, posY, size) {
       const slice = ctx.getImageData(posX, posY, size, size);
       const converted = piximoTools.convertImageData(slice.data);
       const occurrences = piximoTools.getOccurrences(converted);
-      const mostCommom = occurrences.reduce((color, next) =>
-        color[1] >= next[1] ? color : next
-      );
+      const mostCommom = occurrences
+        .filter((color) => color[0] !== "0,0,0,0")
+        .reduce((color, next) => (color[1] >= next[1] ? color : next));
 
       const pixel = piximoTools.populateArray(
         mostCommom[0],
@@ -59,13 +66,11 @@ export default {
       ctx.putImageData(newPixel, posX, posY);
     }
 
-    let rowLength = Math.floor(width / pixelSize);
-    let columnLength = Math.floor((height * rowLength) / width);
-    const size = pixelSize;
-
     for (let i = 0; i < rowLength; i++) {
       for (let j = 0; j < columnLength; j++) {
-        createPixel(i * size, j * size, size);
+        setTimeout(() => {
+          createPixel(i * size, j * size, size);
+        }, 100);
       }
     }
   },

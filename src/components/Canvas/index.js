@@ -8,7 +8,7 @@ import Controls from "../Controls";
 const Canvas = (props) => {
   const canvas = React.createRef();
 
-  const [pixelSize, setPixelSize] = React.useState(10);
+  const [pixelSize, setPixelSize] = React.useState(64);
   const [fileName, setFileName] = React.useState("");
 
   function piximo() {

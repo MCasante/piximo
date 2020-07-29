@@ -23,8 +23,6 @@ const Controls = (props) => {
     }
     const file = inputFile.current.files[0];
 
-    console.log(canvas);
-
     const fr = new FileReader();
     fr.addEventListener("load", createImage);
     fr.readAsDataURL(file);
@@ -50,11 +48,11 @@ const Controls = (props) => {
   }
 
   function changePixelSize(value) {
-    if (value > 100) {
-      value = 100;
+    if (value > 256) {
+      value = 256;
     }
-    if (value < 3) {
-      value = 3;
+    if (value < 1) {
+      value = 1;
     }
 
     setPixelSize(value);
@@ -63,7 +61,7 @@ const Controls = (props) => {
   return (
     <div className="controls_holder">
       <div className="pixel-size-holder">
-        <label htmlFor="pixel-size">Set Pixel Size</label>
+        <label htmlFor="pixel-size">Set canvas width (px)</label>
         <button
           className="pixel-size-button less"
           onClick={() => changePixelSize(pixelSize - 1)}
