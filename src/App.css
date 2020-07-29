@@ -1,4 +1,5 @@
 :root {
+  --container-size: 850px;
   --white: #f9f9f9;
   --black: #333;
   --light-gray: #eee;
@@ -41,7 +42,7 @@ code {
 
 .App > main {
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--container-size);
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
