@@ -58,6 +58,7 @@ const Controls = (props) => {
   }
 
   function changePixelSize(value) {
+    value = Number(value);
     if (value > 256) {
       value = 256;
     }
