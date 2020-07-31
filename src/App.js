@@ -1,12 +1,12 @@
-import React from "react";
-import "./App.css";
-import logo from "./assets/images/logo.png";
+import React from 'react';
+import './App.css';
+import logo from './assets/images/piximo-logo.jpg';
 
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 
-import Canvas from "./components/Canvas";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Canvas from './components/Canvas';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
   return (

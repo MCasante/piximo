@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/piximo/precache-manifest.ea5b8eb14f358ed49353af30eacd5a51.js"
+  "/piximo/precache-manifest.fb760f01433d752b13cb984a1ffadb62.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,29 +1,29 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import './style.css';
 
-import piximoTool from "../../utils/piximo-tool";
+import piximoTool from '../../utils/piximo-tool';
 
-import Controls from "../Controls";
+import Controls from '../Controls';
 
 const Canvas = (props) => {
   const canvas = React.createRef();
 
   const [pixelSize, setPixelSize] = React.useState(64);
-  const [fileName, setFileName] = React.useState("");
+  const [fileName, setFileName] = React.useState('');
   const [imageData, setImageData] = React.useState([]);
 
   function piximo() {
-    const ctx = canvas.current.getContext("2d");
+    const ctx = canvas.current.getContext('2d');
     ctx.putImageData(imageData, 0, 0);
 
     piximoTool.piximo(canvas.current, pixelSize);
   }
 
   function saveImage() {
-    const image = canvas.current.toDataURL("image/png");
-    const a = document.createElement("a");
+    const image = canvas.current.toDataURL('image/png');
+    const a = document.createElement('a');
 
-    const name = fileName.replace(/\.[^/.]+$/, "");
+    const name = fileName.replace(/\.[^/.]+$/, '');
 
     a.download = `${name}-piximo`;
     a.href = image;
